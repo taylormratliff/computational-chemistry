@@ -1,7 +1,0 @@
-#A.2.5 KEYWORDS-START SCRIPT
-#!/bin/sh
-
-for file in `ls -1 *-prepfile.pdb`
-do
-	python proteindocking-keywords.py $file
-done
