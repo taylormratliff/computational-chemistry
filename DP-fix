@@ -1,0 +1,32 @@
+#!/bin/sh
+
+Path=$(pwd)
+
+echo $Path
+
+cp -r /Users/stoddards/Desktop/ProteinDockingScripts $Path 
+
+rm *~
+
+#cd $Path
+#ls
+
+cp *.pdb $Path/ProteinDockingScripts
+
+cd ProteinDockingScripts
+
+./DockingPrepforPeptidesShell
+
+#cd ProteinDockingScripts
+
+cp *prepfile-proteins.pdb $Path
+
+rm *~
+
+rm -r $Path/ProteinDockingScripts
+
+rm $Path/DP-fix
+
+#./$Path/ProteinDockingScripts/DockingPrepforPeptidesShell
+
+#echo $Path
