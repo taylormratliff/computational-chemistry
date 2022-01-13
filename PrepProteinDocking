@@ -1,8 +1,0 @@
-#A.2.19 ProteinProteinDockingCallFile
-
-#!/bin/sh
-
-for file in `ls -1 *.pdb`
-do
-	python Protein-ProteinDockingprep-file.py $file
-done
