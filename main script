@@ -295,7 +295,7 @@ def main():
         outFile = input("Enter file to be submitted to Epitopia")
         inFile = input("Enter the name of the original .pbd file")
         aminoList = input("Enter the amino list")
-        largest = input("Enter largest LOC in the origrinal .pbd")
+        largest = input("Enter largest LOC in the original .pbd")
 
         write_seqres(outFile, aminoList, largest)
         write_bulk(outFile, inFile)
