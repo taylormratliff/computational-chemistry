@@ -3,6 +3,7 @@
 # Purpose: A combination of all the scripts we were provided with originally created by Colin Welsh. 
 
 import os
+import fileinput
 
 ##ZDOCK FIX (zdock to chimera & zdock to rosie)
 ### Purpose: Removes information from each line that prevents .pdb file from being opened in Chimera
@@ -280,3 +281,45 @@ def enterChains():
         chainName = input('Enter chain name: ')
         recChains.append(chainName)
     return recChains
+
+
+def main():
+    #Receive input file from user
+    
+    original = input("What program is you program currently compatible with? " )
+    
+    #Ask user which program they want to use
+    choose = input("What program would you like to run your file on? ")
+
+    if choose.lower() == "epitopia":
+        outFile = input("Enter file to be submitted to Epitopia")
+        inFile = input("Enter the name of the original .pbd file")
+        aminoList = input("Enter the amino list")
+        largest = input("Enter largest LOC in the origrinal .pbd")
+
+        write_seqres(outFile, aminoList, largest)
+        write_bulk(outFile, inFile)
+
+
+
+    elif choose.lower() == "chimera":
+        
+        if original.lower() == "zdock":
+            filePrefixAntigen = input("File Prefix Antigen: ")
+            filePrefixCap = input("File Prefix Cap: ")
+            
+            zdock_to_chimera(filePrefixAntigen, filePrefixCap)
+
+
+    elif choose.lower() == "rosie":
+
+        listDirectories = input("Enter directory path to place new file in: ")
+        fileList = input("Enter list of files: ")
+
+        convert_to_rosie(listDirectories, fileList)
+
+
+main()
+
+    
+
